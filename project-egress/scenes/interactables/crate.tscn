@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://t4bor70wcxh"]
+
+[ext_resource type="Script" uid="uid://c81d6tia18uau" path="res://scripts/crate.gd" id="1_jpsw2"]
+[ext_resource type="Texture2D" uid="uid://bpbt5acejus0m" path="res://assets/sprites/Crates.png" id="1_kx2bw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpsw2"]
+atlas = ExtResource("1_kx2bw")
+region = Rect2(33.984055, 0, 16.015945, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpsw2"]
+
+[node name="Crate" type="Area2D" unique_id=1706458602]
+script = ExtResource("1_jpsw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=394050688]
+texture = SubResource("AtlasTexture_jpsw2")
+region_rect = Rect2(33.88612, 0, 16.11388, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1954372064]
+shape = SubResource("RectangleShape2D_jpsw2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
